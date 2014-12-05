@@ -130,6 +130,11 @@ public class SubInfoRecordUpdater extends Handler {
                         SubscriptionManager.INVALID_SLOT_ID);
                 logd("slotId: " + slotId + " simStatus: " + simStatus);
                 if (slotId == SubscriptionManager.INVALID_SLOT_ID) {
+                    logd("Invalid slotId! Bailing out!");
+                    return;
+                }
+                if (IccCardConstants.INTENT_VALUE_ICC_NOT_READY.equals(simStatus)) {
+                    logd("Sim is not ready! Bailing out!");
                     return;
                 }
 
