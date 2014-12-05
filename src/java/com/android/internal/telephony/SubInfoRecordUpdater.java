@@ -129,7 +129,8 @@ public class SubInfoRecordUpdater extends Handler {
                 slotId = intent.getIntExtra(PhoneConstants.SLOT_KEY,
                         SubscriptionManager.INVALID_SLOT_ID);
                 logd("slotId: " + slotId + " simStatus: " + simStatus);
-                if (slotId == SubscriptionManager.INVALID_SLOT_ID) {
+                if (slotId == SubscriptionManager.INVALID_SLOT_ID
+                        || IccCardConstants.INTENT_VALUE_ICC_NOT_READY.equals(simStatus)) {
                     return;
                 }
 
