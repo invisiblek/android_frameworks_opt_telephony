@@ -291,6 +291,7 @@ public class UiccSmsController extends ISms.Stub {
 
     @Override
     public boolean isSmsSimPickActivityNeeded(int subId) {
+        return false; /*
         final Context context = ActivityThread.currentApplication().getApplicationContext();
 
         boolean canCurrentAppHandleAlwaysAsk = SmsApplication.canSmsAppHandleAlwaysAsk(context);
@@ -327,7 +328,7 @@ public class UiccSmsController extends ISms.Stub {
             }
         }
 
-        return !canCurrentAppHandleAlwaysAsk;
+        return !canCurrentAppHandleAlwaysAsk; */
     }
 
     @Override
